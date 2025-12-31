@@ -2,7 +2,7 @@ import { siteData } from "../../data/siteData";
 import { Link } from "react-router-dom";
 import Container from "../common/Container";
 import { Separator } from "../ui/separator";
-import { Facebook, Instagram, Twitter } from "lucide-react";
+import { Facebook, Instagram, Twitter, MessageCircle, Music } from "lucide-react";
 
 export default function Footer() {
   const { footer, socials, contactInfo, brandName } = siteData;
@@ -13,6 +13,8 @@ export default function Footer() {
     if (l.includes("instagram")) return <Instagram className="h-5 w-5" />;
     if (l.includes("twitter") || l.includes("x")) return <Twitter className="h-5 w-5" />;
     if (l.includes("facebook")) return <Facebook className="h-5 w-5" />;
+    if (l.includes("whatsapp")) return <MessageCircle className="h-5 w-5" />;
+    if (l.includes("tiktok")) return <Music className="h-5 w-5" />;
     return null;
   };
 

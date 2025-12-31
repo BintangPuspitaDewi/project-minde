@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { products } from "../data/products";
 import { siteData } from "../data/siteData";
@@ -7,12 +7,13 @@ import Container from "../components/common/Container";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { Separator } from "../components/ui/separator";
-import { ArrowLeft, MessageCircle, ShoppingBag, ShieldCheck } from "lucide-react";
+import { ArrowLeft, MessageCircle, ShoppingBag, ShieldCheck, Minus, Plus } from "lucide-react";
 import ProductCard from "../components/common/ProductCard";
 import { MotionFadeScale, MotionReveal } from "../components/common/MotionReveal";
 
 export default function ProductDetail() {
   const { slug } = useParams();
+  const [quantity, setQuantity] = useState(1);
   const product = products.find((p) => p.slug === slug);
   const { whatsapp } = siteData;
 
@@ -21,9 +22,19 @@ export default function ProductDetail() {
   }
 
   const handleWhatsAppOrder = () => {
-     const message = whatsapp.messageTemplate.replace("{productName}", product.name);
+     const message = whatsapp.messageTemplate
+        .replace("{productName}", product.name)
+        .replace("{quantity}", quantity);
      const url = `${whatsapp.baseUrl}${whatsapp.phoneNumber}?text=${encodeURIComponent(message)}`;
      window.open(url, "_blank");
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 1) setQuantity(prev => prev - 1);
+  };
+
+  const handleIncrement = () => {
+    setQuantity(prev => prev + 1);
   };
 
   // Enhanced Related Products Logic
@@ -102,7 +113,28 @@ export default function ProductDetail() {
                              </div>
                         </div>
 
-                        <div className="pt-6">
+                        {/* Quantity & Action */}
+                        <div className="pt-6 space-y-4">
+                            <div className="flex items-center gap-4">
+                                <span className="font-medium text-foreground">Jumlah:</span>
+                                <div className="flex items-center border rounded-md">
+                                    <button 
+                                        onClick={handleDecrement}
+                                        disabled={quantity <= 1}
+                                        className="p-3 hover:bg-accent disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                                    >
+                                        <Minus className="w-4 h-4" />
+                                    </button>
+                                    <span className="w-12 text-center font-semibold">{quantity}</span>
+                                    <button 
+                                        onClick={handleIncrement}
+                                        className="p-3 hover:bg-accent transition-colors"
+                                    >
+                                        <Plus className="w-4 h-4" />
+                                    </button>
+                                </div>
+                            </div>
+                            
                             <Button size="lg" className="w-full md:w-auto text-lg px-8 py-6 gap-2 bg-green-600 hover:bg-green-700 text-white" onClick={handleWhatsAppOrder}>
                                 <MessageCircle className="w-5 h-5" />
                                 Order via WhatsApp

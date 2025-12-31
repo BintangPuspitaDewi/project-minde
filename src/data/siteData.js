@@ -45,18 +45,18 @@ export const siteData = {
     ],
   },
   contactInfo: {
-    phone: "+62 812-3456-7890",
+    phone: "+62 822-8859-8726",
     email: "halo@minde.com",
     address: "Jl. Umbansari No.1 Rumbai, Pekanbaru - Riau 28265",
   },
   socials: [
-    { label: "Instagram", url: "https://instagram.com" },
-    { label: "TikTok", url: "https://tiktok.com" },
-    { label: "WhatsApp", url: "https://wa.me/6281234567890" },
+    { label: "Instagram", url: "https://www.instagram.com/minde_craft06/" },
+    { label: "TikTok", url: "https://www.tiktok.com/@minde.crafts" },
+    { label: "WhatsApp", url: "https://wa.me/6282288598726" },
   ],
   whatsapp: {
-    phoneNumber: "6281234567890",
-    messageTemplate: "Halo Mindé, saya mau pesan {productName}. Apakah stok masih ada?",
+    phoneNumber: "6282288598726",
+    messageTemplate: "Halo Mindé, saya mau pesan *{productName}* sebanyak *{quantity}* pcs. Apakah stok masih ada?",
     baseUrl: "https://wa.me/",
   },
 };
