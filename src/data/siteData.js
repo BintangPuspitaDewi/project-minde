@@ -21,7 +21,7 @@ export const siteData = {
   productsSection: {
     title: "Our Products",
     subtitle: "Koleksi Rajutan Terbaik Untukmu",
-    homePreviewCount: 6,
+    homePreviewCount: 8,
   },
   footer: {
     brandDescription: "Mindé adalah brand rajutan handmade yang menghadirkan karya penuh kehangatan dan kreativitas. Setiap produk dirajut secara manual dengan penuh ketelatenan, menghasilkan rajutan unik yang ceria dan penuh makna",

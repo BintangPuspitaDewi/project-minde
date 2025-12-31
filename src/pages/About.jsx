@@ -29,12 +29,14 @@ export default function About() {
          <Container>
              <div className="grid lg:grid-cols-2 gap-12 items-start">
                   <MotionFadeScale>
-                      <div className="relative rounded-3xl overflow-hidden bg-muted aspect-square flex flex-col items-center justify-center border text-center p-8">
+                      <div className="relative rounded-3xl overflow-hidden  aspect-square flex flex-col items-center justify-center  text-center p-8">
                            {/* TODO: Replace asset */}
-                           <div className="w-32 h-32 bg-orange-100 rounded-full flex items-center justify-center mb-6">
-                               <span className="text-4xl">🧶</span>
-                           </div>
-                           <p className="text-muted-foreground font-medium">Image of Our Workshop / Process</p>
+                           <img 
+                                src="/tigerrajut.png" 
+                                alt="About Illustration" 
+                                className="w-full max-w-[320px] h-auto object-contain mb-6 drop-shadow-xl hover:scale-105 transition-transform duration-500"
+                           />
+                    
                       </div>
                   </MotionFadeScale>
                   <MotionReveal delay={0.2}>

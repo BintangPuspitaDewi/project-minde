@@ -56,22 +56,22 @@ export default function Home() {
       <Separator />
 
       {/* ABOUT PREVIEW SECTION */}
-      <section className="py-20 lg:py-28">
+      <section className="py-4 lg:py-4">
         <Container>
            <div className="grid gap-12 lg:grid-cols-2 items-center">
               <MotionFadeScale>
-                   <div className="relative bg-muted rounded-3xl overflow-hidden aspect-[4/3] shadow-inner flex items-center justify-center">
-                       {/* TODO: Replace asset */}
-                       <div className="text-center p-6">
-                           <span className="text-6xl mb-4 block">🐅</span>
-                           <p className="text-muted-foreground text-sm">Illustration Placeholder</p>
+                       <div className="flex justify-center items-center w-full">
+                           <img 
+                              src="/tigerrajut.png" 
+                              alt="Tiger Rajut" 
+                              className="w-full max-w-[500px] h-auto object-contain transition-transform duration-500 hover:scale-105"
+                           />
                        </div>
-                   </div>
               </MotionFadeScale>
               <div>
                   <MotionReveal>
-                      <h2 className="text-3xl font-bold mb-6 flex items-center gap-2">
-                        <span className="text-primary">✨</span> {about.title}
+                      <h2 className="text-3xl font-bold mb-2 flex items-center gap-2">
+                        <img src="/lampimage.png" alt="Sparkle" className="w-16 h-16" /> {about.title}
                       </h2>
                       <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                           {about.shortText}
@@ -86,7 +86,7 @@ export default function Home() {
       </section>
 
       {/* PRODUCTS PREVIEW SECTION */}
-      <section className="py-20 bg-secondary/10">
+      <section className="py-12 bg-secondary/10">
          <Container>
             <MotionReveal>
                 <SectionTitle 
@@ -95,7 +95,7 @@ export default function Home() {
                 />
             </MotionReveal>
 
-            <MotionStaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <MotionStaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 {featuredProducts.map((product) => (
                     <MotionStaggerItem key={product.id}>
                         <ProductCard product={product} />

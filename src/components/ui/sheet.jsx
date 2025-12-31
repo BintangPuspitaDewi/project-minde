@@ -61,9 +61,9 @@ export const SheetContent = ({ children, side = "right", className }) => {
             animate="open"
             exit="closed"
             variants={variants}
-            transition={{ type: "spring", damping: 20, stiffness: 100 }}
+            transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
             className={cn(
-              "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500 inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm",
+              "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300 inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm",
               className
             )}
           >

@@ -12,7 +12,7 @@ import { MotionStaggerContainer, MotionStaggerItem } from "../components/MotionR
 
 // Extract unique categories from products
 const CATEGORIES = ["All", ...new Set(products.map((p) => p.category))];
-const ITEMS_PER_PAGE = 8;
+const ITEMS_PER_PAGE = 16;
 
 export default function Catalog() {
   const [search, setSearch] = useState("");
