@@ -53,15 +53,15 @@ export default function ProductDetail() {
 
   return (
     <MainLayout>
-       <div className="bg-muted/30 py-8">
+       <div className="bg-muted/30 py-2">
           <Container>
-             <Link to="/catalog" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors mb-4">
+             <Link to="/catalog" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary transition-colors">
                 <ArrowLeft className="w-4 h-4 mr-1" /> Back to Catalog
              </Link>
           </Container>
        </div>
 
-       <section className="py-12">
+       <section className="py-6">
           <Container>
              <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
                  {/* Left: Image */}
@@ -105,11 +105,13 @@ export default function ProductDetail() {
                             </p>
                         </div>
 
-                        <div className="bg-green-50 dark:bg-green-950/20 border border-green-100 dark:border-green-900 rounded-lg p-4 flex items-start gap-3">
-                             <ShieldCheck className="w-5 h-5 text-green-600 mt-0.5" />
+                        <div className="bg-[#FDF8EE] border border-[#B88E2F]/30 rounded-xl p-5 flex items-start gap-4 shadow-sm">
+                             <div className="bg-white p-2 rounded-full shadow-sm shrink-0">
+                                <ShieldCheck className="w-5 h-5 text-[#B88E2F]" />
+                             </div>
                              <div className="text-sm">
-                                 <p className="font-semibold text-green-700 dark:text-green-400">Jaminan Kualitas Handmade</p>
-                                 <p className="text-green-600/80 dark:text-green-500/80">Produk ini dibuat manual dengan ketelitian tinggi dan telah lolos quality check.</p>
+                                 <p className="font-bold text-[#5C4033] mb-1">Jaminan Kualitas Handmade</p>
+                                 <p className="text-[#856b50] leading-relaxed">Produk ini dibuat manual dengan ketelitian tinggi dan telah lolos quality check.</p>
                              </div>
                         </div>
 

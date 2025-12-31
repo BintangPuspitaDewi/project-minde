@@ -46,7 +46,7 @@ export const siteData = {
   },
   contactInfo: {
     phone: "+62 822-8859-8726",
-    email: "halo@minde.com",
+    email: "minde.craft06@gmail.com",
     address: "Jl. Umbansari No.1 Rumbai, Pekanbaru - Riau 28265",
   },
   socials: [
