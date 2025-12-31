@@ -110,7 +110,7 @@ export default function Catalog() {
                       </div>
                       <ChevronDown className="h-3 w-3 opacity-50" />
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent align="end" className="w-[180px]">
+                  <DropdownMenuContent align="start" className="w-[180px]">
                      <DropdownMenuItem onClick={() => {
                         setCategory("All");
                         setVisibleCount(ITEMS_PER_PAGE);
