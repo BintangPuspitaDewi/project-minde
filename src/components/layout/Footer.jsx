@@ -1,7 +1,7 @@
-import { siteData } from "../data/siteData";
+import { siteData } from "../../data/siteData";
 import { Link } from "react-router-dom";
-import Container from "./Container";
-import { Separator } from "./ui/separator";
+import Container from "../common/Container";
+import { Separator } from "../ui/separator";
 import { Facebook, Instagram, Twitter } from "lucide-react";
 
 export default function Footer() {

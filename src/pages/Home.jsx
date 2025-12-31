@@ -1,13 +1,13 @@
 import { siteData } from "../data/siteData";
 import { products } from "../data/products";
 import MainLayout from "../layouts/MainLayout";
-import Container from "../components/Container";
+import Container from "../components/common/Container";
 import { Button } from "../components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import ProductCard from "../components/ProductCard";
-import SectionTitle from "../components/SectionTitle";
-import { MotionFadeScale, MotionReveal, MotionStaggerContainer, MotionStaggerItem } from "../components/MotionReveal";
+import ProductCard from "../components/common/ProductCard";
+import SectionTitle from "../components/common/SectionTitle";
+import { MotionFadeScale, MotionReveal, MotionStaggerContainer, MotionStaggerItem } from "../components/common/MotionReveal";
 import { Separator } from "../components/ui/separator";
 
 export default function Home() {

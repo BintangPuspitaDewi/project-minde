@@ -1,14 +1,14 @@
 import { useRef, useState } from "react";
 import { siteData } from "../data/siteData";
 import MainLayout from "../layouts/MainLayout";
-import Container from "../components/Container";
-import SectionTitle from "../components/SectionTitle";
+import Container from "../components/common/Container";
+import SectionTitle from "../components/common/SectionTitle";
 import { Card, CardContent } from "../components/ui/card";
 import { Input } from "../components/ui/input";
 import { Textarea } from "../components/ui/textarea";
 import { Button } from "../components/ui/button";
 import { Mail, MapPin, Phone, Send, Loader2 } from "lucide-react";
-import { MotionFadeScale, MotionReveal } from "../components/MotionReveal";
+import { MotionFadeScale, MotionReveal } from "../components/common/MotionReveal";
 
 export default function Contact() {
   const { contactInfo } = siteData;

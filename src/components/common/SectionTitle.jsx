@@ -1,4 +1,4 @@
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
 import { motion } from "framer-motion";
 
 export default function SectionTitle({ title, subtitle, className, align = "center" }) {

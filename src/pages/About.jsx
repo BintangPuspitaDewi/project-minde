@@ -1,8 +1,8 @@
 import { siteData } from "../data/siteData";
 import MainLayout from "../layouts/MainLayout";
-import Container from "../components/Container";
-import SectionTitle from "../components/SectionTitle";
-import { MotionFadeScale, MotionReveal } from "../components/MotionReveal";
+import Container from "../components/common/Container";
+import SectionTitle from "../components/common/SectionTitle";
+import { MotionFadeScale, MotionReveal } from "../components/common/MotionReveal";
 import { Separator } from "../components/ui/separator";
 import { CheckCircle2, Heart, ShieldCheck } from "lucide-react";
 

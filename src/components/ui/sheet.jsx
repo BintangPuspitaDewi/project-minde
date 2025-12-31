@@ -1,3 +1,5 @@
+import { createPortal } from 'react-dom';
+
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X } from 'lucide-react';
@@ -41,11 +43,13 @@ export const SheetContent = ({ children, side = "right", className }) => {
   }, [open]);
 
   const variants = {
-    closed: { x: "100%", opacity: 0 },
-    open: { x: 0, opacity: 1 },
+    closed: { x: "100%" },
+    open: { x: 0 },
   };
 
-  return (
+  if (typeof document === "undefined") return null;
+
+  return createPortal(
     <AnimatePresence>
       {open && (
         <>
@@ -54,16 +58,16 @@ export const SheetContent = ({ children, side = "right", className }) => {
             animate={{ opacity: 0.5 }}
             exit={{ opacity: 0 }}
             onClick={() => setOpen(false)}
-            className="fixed inset-0 z-50 bg-black/80"
+            className="fixed inset-0 z-[99] bg-black/80"
           />
           <motion.div
             initial="closed"
             animate="open"
             exit="closed"
             variants={variants}
-            transition={{ type: "tween", duration: 0.3, ease: "easeInOut" }}
+            transition={{ ease: "easeInOut", duration: 0.3 }}
             className={cn(
-              "fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-200 data-[state=open]:duration-300 inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm",
+              "fixed z-[100] gap-4 bg-background p-6 shadow-lg transition ease-in-out inset-y-0 right-0 h-full w-3/4 border-l sm:max-w-sm",
               className
             )}
           >
@@ -77,6 +81,7 @@ export const SheetContent = ({ children, side = "right", className }) => {
           </motion.div>
         </>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 };

@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu } from "lucide-react";
-import { siteData } from "../data/siteData";
-import { cn } from "../lib/utils";
-import Container from "./Container";
-import { Button } from "./ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
+import { siteData } from "../../data/siteData";
+import { cn } from "../../lib/utils";
+import Container from "../common/Container";
+import { Button } from "../ui/button";
+import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
 import { motion } from "framer-motion";
 
 export default function Navbar() {

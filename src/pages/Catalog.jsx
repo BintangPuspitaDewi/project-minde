@@ -1,18 +1,18 @@
 import { useState, useMemo } from "react";
 import { products } from "../data/products";
 import MainLayout from "../layouts/MainLayout";
-import Container from "../components/Container";
-import SectionTitle from "../components/SectionTitle";
-import ProductCard from "../components/ProductCard";
+import Container from "../components/common/Container";
+import SectionTitle from "../components/common/SectionTitle";
+import ProductCard from "../components/common/ProductCard";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../components/ui/dropdown-menu";
 import { Filter, Search, ChevronDown, X, ArrowUpDown } from "lucide-react";
-import { MotionStaggerContainer, MotionStaggerItem } from "../components/MotionReveal";
+import { MotionStaggerContainer, MotionStaggerItem, MotionFadeScale } from "../components/common/MotionReveal";
 
 // Extract unique categories from products
 const CATEGORIES = ["All", ...new Set(products.map((p) => p.category))];
-const ITEMS_PER_PAGE = 16;
+const ITEMS_PER_PAGE = 8;
 
 export default function Catalog() {
   const [search, setSearch] = useState("");
@@ -144,16 +144,13 @@ export default function Catalog() {
           {/* PRODUCT GRID */}
           {filteredProducts.length > 0 ? (
             <>
-               <MotionStaggerContainer 
-                  key={`${category}-${sort}-${search}`} // Force re-render animation on filter change
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12"
-               >
+               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                   {visibleProducts.map((product) => (
-                     <MotionStaggerItem key={product.id}>
+                     <MotionFadeScale key={product.id} delay={0.1}>
                         <ProductCard product={product} />
-                     </MotionStaggerItem>
+                     </MotionFadeScale>
                   ))}
-               </MotionStaggerContainer>
+               </div>
                
                {/* Load More */}
                {hasMore && (

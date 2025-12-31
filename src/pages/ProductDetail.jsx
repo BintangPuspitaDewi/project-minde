@@ -3,13 +3,13 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { products } from "../data/products";
 import { siteData } from "../data/siteData";
 import MainLayout from "../layouts/MainLayout";
-import Container from "../components/Container";
+import Container from "../components/common/Container";
 import { Badge } from "../components/ui/badge";
 import { Button } from "../components/ui/button";
 import { Separator } from "../components/ui/separator";
 import { ArrowLeft, MessageCircle, ShoppingBag, ShieldCheck } from "lucide-react";
-import ProductCard from "../components/ProductCard";
-import { MotionFadeScale, MotionReveal } from "../components/MotionReveal";
+import ProductCard from "../components/common/ProductCard";
+import { MotionFadeScale, MotionReveal } from "../components/common/MotionReveal";
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -26,9 +26,19 @@ export default function ProductDetail() {
      window.open(url, "_blank");
   };
 
-  const relatedProducts = products
-    .filter((p) => p.category === product.category && p.id !== product.id)
-    .slice(0, 4);
+  // Enhanced Related Products Logic
+  let relatedProducts = products
+    .filter((p) => p.category === product.category && p.id !== product.id);
+
+  // If less than 4, fill with other random products
+  if (relatedProducts.length < 4) {
+      const otherProducts = products.filter(p => p.category !== product.category && p.id !== product.id);
+      // Simple shuffle or just take first few to fill gap
+      const remainingCount = 4 - relatedProducts.length;
+      relatedProducts = [...relatedProducts, ...otherProducts.slice(0, remainingCount)];
+  }
+  
+  relatedProducts = relatedProducts.slice(0, 4);
 
   return (
     <MainLayout>
