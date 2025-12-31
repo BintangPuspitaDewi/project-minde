@@ -9,6 +9,7 @@ import { Button } from "../components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "../components/ui/dropdown-menu";
 import { Filter, Search, ChevronDown, X, ArrowUpDown } from "lucide-react";
 import { MotionStaggerContainer, MotionStaggerItem, MotionFadeScale } from "../components/common/MotionReveal";
+import FloatingIcons from "../components/common/FloatingIcons";
 
 // Extract unique categories from products
 const CATEGORIES = ["All", ...new Set(products.map((p) => p.category))];
@@ -61,10 +62,18 @@ export default function Catalog() {
 
   return (
     <MainLayout>
+      {/* HEADER */}
+      <section className="bg-primary/5 py-16 relative overflow-hidden">
+        <FloatingIcons variant="title" />
+        <Container>
+          <SectionTitle title="Catalog" subtitle="Temukan koleksi rajutan favoritmu" />
+        </Container>
+      </section>
+
+      {/* CONTENT */}
       <section className="py-12 bg-background min-h-screen">
         <Container>
-          <SectionTitle title="Catalog" subtitle="Temukan koleksi rajutan favoritmu" className="mb-8" />
-
+          
           {/* CONTROLS: Search, Filter, Sort */}
           <div className="flex flex-col md:flex-row gap-4 mb-10 items-center justify-between sticky top-[65px] z-30 bg-background/95 backdrop-blur py-4 border-b md:border-none">
             

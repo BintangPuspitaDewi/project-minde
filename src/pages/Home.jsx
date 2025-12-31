@@ -9,6 +9,7 @@ import ProductCard from "../components/common/ProductCard";
 import SectionTitle from "../components/common/SectionTitle";
 import { MotionFadeScale, MotionReveal, MotionStaggerContainer, MotionStaggerItem } from "../components/common/MotionReveal";
 import { Separator } from "../components/ui/separator";
+import FloatingIcons from "../components/common/FloatingIcons";
 
 export default function Home() {
   const { hero, about, productsSection } = siteData;
@@ -18,12 +19,13 @@ export default function Home() {
     <MainLayout>
       {/* HERO SECTION */}
       <section className="relative overflow-hidden py-20 lg:py-32 bg-[#FDF8EE]">
+        <FloatingIcons variant="hero" />
         <Container>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
             {/* Left Content */}
-            <div className="flex flex-col justify-center text-center lg:text-left space-y-8">
+            <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left space-y-8">
                <MotionReveal delay={0.1}>
-                  <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl text-foreground leading-tight">
+                  <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight lg:text-6xl text-foreground leading-tight">
                     <span className="block">
                        <span className="text-[#0B1221]">Selamat</span> <span className="text-[#F37021]">Datang</span>
                     </span>
@@ -33,7 +35,7 @@ export default function Home() {
                   </h1>
                </MotionReveal>
                <MotionReveal delay={0.2}>
-                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                  <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                     {hero.description}
                   </p>
                </MotionReveal>

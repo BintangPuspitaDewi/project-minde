@@ -5,6 +5,7 @@ import SectionTitle from "../components/common/SectionTitle";
 import { MotionFadeScale, MotionReveal } from "../components/common/MotionReveal";
 import { Separator } from "../components/ui/separator";
 import { CheckCircle2, Heart, ShieldCheck } from "lucide-react";
+import FloatingIcons from "../components/common/FloatingIcons";
 
 export default function About() {
   const { about } = siteData;
@@ -18,7 +19,9 @@ export default function About() {
   return (
     <MainLayout>
       {/* HEADER */}
-      <section className="bg-primary/5 py-16">
+      {/* HEADER */}
+      <section className="bg-primary/5 py-16 relative overflow-hidden">
+         <FloatingIcons variant="title" />
          <Container>
              <SectionTitle title={about.title} subtitle="Cerita di balik setiap rajutan Mindé" />
          </Container>

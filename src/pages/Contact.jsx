@@ -10,6 +10,8 @@ import { Button } from "../components/ui/button";
 import { Mail, MapPin, Phone, Send, Loader2 } from "lucide-react";
 import { MotionFadeScale, MotionReveal } from "../components/common/MotionReveal";
 
+import FloatingIcons from "../components/common/FloatingIcons";
+
 export default function Contact() {
   const { contactInfo } = siteData;
   const [loading, setLoading] = useState(false);
@@ -32,10 +34,16 @@ export default function Contact() {
 
   return (
     <MainLayout>
-       <section className="py-16 md:py-24">
+       {/* HEADER */}
+       <section className="bg-primary/5 py-16 relative overflow-hidden">
+          <FloatingIcons variant="title" />
           <Container>
              <SectionTitle title="Get in Touch" subtitle="Kami siap mendengar pertanyaan dan masukanmu." />
+          </Container>
+       </section>
 
+       <section className="py-12 md:py-20">
+          <Container>
              <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
                 {/* Contact Info Card */}
                 <MotionReveal>

@@ -1,9 +1,11 @@
 import { cn } from "../../lib/utils";
 import { motion } from "framer-motion";
+import FloatingIcons from "./FloatingIcons";
 
-export default function SectionTitle({ title, subtitle, className, align = "center" }) {
+export default function SectionTitle({ title, subtitle, className, align = "center", withDecorations = false }) {
   return (
-    <div className={cn("mb-16 space-y-6", align === "center" ? "text-center" : "text-left", className)}>
+    <div className={cn("mb-16 space-y-6 relative", align === "center" ? "text-center" : "text-left", className)}>
+      {withDecorations && <FloatingIcons variant="title" className="h-[150%] -top-1/4" />}
       <div className="relative inline-block">
         <h2 className="relative z-10 text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl text-foreground drop-shadow-sm">
           {title}
